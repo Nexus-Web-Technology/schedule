@@ -4,47 +4,107 @@ body {
   font-family: 'Roboto', Arial, sans-serif;
   background-color: #f5f7fa;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .App {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Белая шапка */
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 0 13px;
   background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  height: 70px;
+  border: none;
+}
+
+.top-bar a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  height: 70px;
+  margin-right: 20px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.nav-button {
+  display: flex;
+  height: 100%;
+  border-radius: 0;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  text-decoration: none;
+  font-size: 14.4px;
+  font-family: 'Manrope', Arial, sans-serif;
+  padding: 0 10px;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  background-color: transparent;
+}
+
+.nav-button:hover {
+  background-color: #f7f7f7;
+  color: #000000;
+}
+
+/* Серый фон с заголовком и расписанием*/
+.main-content {
+  background-color: #f5f7fa;
+  padding-bottom: 5px;
+}
+
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.main-content h1 {
+  align-items: center;
+  font-family: 'manrope';
+  font-size: 32px;
+  color: #000000;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.schedule-panel {
+  background: #fff;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-header {
-  text-align: center;
+.schedule-panel h2 {
+  font-family: 'manrope';
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.schedule-panel hr {
+  border: 0;
+  height: 1px;
+  background: #ddd;
   margin-bottom: 20px;
-}
-
-header h1 {
-  font-size: 24px;
-  color: #4a90e2;
-}
-
-nav {
-  margin: 20px 0;
-  text-align: center;
-}
-
-nav a {
-  color: #4a90e2;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 0 10px;
-  padding: 5px 10px;
-  border: 2px solid transparent;
-  border-radius: 5px;
-  transition: all 0.3s;
-}
-
-nav a:hover {
-  background-color: #4a90e2;
-  color: #fff;
-  border-color: #4a90e2;
 }
 
 /* Стили секций */
@@ -55,9 +115,9 @@ section {
 section h2 {
   font-size: 20px;
   color: #4a90e2;
-  border-bottom: 2px solid #4a90e2;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
 }
 
 /* Форма и кнопки */
@@ -103,7 +163,7 @@ ul {
 }
 
 ul li {
-  background: #f9f9f9;
+  background: #f5f7fa;
   border: 1px solid #ddd;
   margin-bottom: 10px;
   padding: 10px 15px;
