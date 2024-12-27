@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Schedule({ schedule, setSchedule, subjects, teachers, groups }) {
+function Schedule({ schedule, setSchedule, subjects, teachers, groups, times }) {
   const [newEntry, setNewEntry] = useState({
     subject: '',
     teacher: '',
@@ -22,7 +22,7 @@ function Schedule({ schedule, setSchedule, subjects, teachers, groups }) {
 
   return (
     <div>
-      <h3>Добавить занятие</h3>
+      <h2>Редактирование расписания</h2>
       <div>
         <select name="subject" value={newEntry.subject} onChange={handleChange}>
           <option value="">Выберите дисциплину</option>
@@ -48,12 +48,14 @@ function Schedule({ schedule, setSchedule, subjects, teachers, groups }) {
             </option>
           ))}
         </select>
-        <input
-          type="time"
-          name="time"
-          value={newEntry.time}
-          onChange={handleChange}
-        />
+        <select name="time" value={newEntry.time} onChange={handleChange}>
+          <option value="">Выберите время</option>
+          {times.map((time, index) => (
+            <option key={index} value={time}>
+              {time}
+            </option>
+          ))}
+        </select>
         <button onClick={handleAddEntry}>Добавить</button>
       </div>
       <ul>

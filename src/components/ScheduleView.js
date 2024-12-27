@@ -4,7 +4,7 @@ function ScheduleView({ schedule }) {
   return (
     <div>
       {schedule.length === 0 ? (
-        <p style={{ textAlign: 'center', color: '#666' }}>Расписание пока пусто. Перейдите на страницу "Редактирование", чтобы добавить занятия.</p>
+        <p style={{ textAlign: 'center', color: '#666' }}>Расписание пока пусто. Перейдите на страницу "Управление расписанием", чтобы добавить занятия.</p>
       ) : (
         <ul>
           {schedule.map((entry, index) => (

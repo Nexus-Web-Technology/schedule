@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import Subjects from './components/Subjects';
-import Teachers from './components/Teachers';
-import Groups from './components/Groups';
 import Schedule from './components/Schedule';
 import ScheduleView from './components/ScheduleView';
 import logo from './surgu.png';
 
 function App() {
-  const [subjects, setSubjects] = useState([]);
-  const [teachers, setTeachers] = useState([]);
-  const [groups, setGroups] = useState([]);
+  const initialGroups = ['607-42', '607-41'];
+  const initialTeachers = ['Назин Антон Герогиевич', 'Кокорин Михаил Андреевич', 'Лысенкова Светлана Александровна', 'Назина Нина Борисовна', 'Пешков Андрей Александрович', 'Андриенко Анастасия Ивановна', 'Савантеева Кристина Владимировна'];
+  const initialSubjects = ['Математический анализ', 'Web-программирование', 'Программирование', 'Базы данных', 'История России', 'Информатика', 'Введение в проф. деятельность', 'Основы Российской Государственности'];
+  const initialTimes = [
+    '8:30-9:50 (1 пара)',
+    '10:00-11:20 (2 пара)',
+    '11:30-12:50 (3 пара)',
+    '13:20-14:50 (4 пара)',
+  ];
+
   const [schedule, setSchedule] = useState([]);
 
   return (
@@ -47,30 +51,14 @@ function App() {
                 <Route
                   path="/edit"
                   element={
-                    <div>
-                      <section>
-                        <h2>Дисциплины</h2>
-                        <Subjects subjects={subjects} setSubjects={setSubjects} />
-                      </section>
-                      <section>
-                        <h2>Преподаватели</h2>
-                        <Teachers teachers={teachers} setTeachers={setTeachers} />
-                      </section>
-                      <section>
-                        <h2>Учебные группы</h2>
-                        <Groups groups={groups} setGroups={setGroups} />
-                      </section>
-                      <section>
-                        <h2>Редактирование расписания</h2>
-                        <Schedule
-                          schedule={schedule}
-                          setSchedule={setSchedule}
-                          subjects={subjects}
-                          teachers={teachers}
-                          groups={groups}
-                        />
-                      </section>
-                    </div>
+                  <Schedule
+                    schedule={schedule}
+                    setSchedule={setSchedule}
+                    subjects={initialSubjects}
+                    teachers={initialTeachers}
+                    groups={initialGroups}
+                    times={initialTimes}
+                  />
                   }
                 />
               </Routes>
