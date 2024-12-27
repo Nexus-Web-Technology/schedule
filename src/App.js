@@ -26,9 +26,8 @@ function App() {
           <img src={logo} alt="Логотип СурГУ" className="logo" />
           </a>
           <nav>
-            <Link to="https://lms.surgu.ru/?redirect=0" className="nav-button">Главная страница</Link>
+            <Link to="https://www.surgu.ru" className="nav-button">Главная страница</Link>
             <Link to="https://lms.surgu.ru/my/" className="nav-button">Личный кабинет</Link>
-            <Link to="https://lms.surgu.ru/my/courses.php" className="nav-button">Мои курсы</Link>
             <Link to="/" className="nav-button">Просмотр расписания</Link>
             <Link to="/edit" className="nav-button">Управление расписанием</Link>
           </nav>
