@@ -2,5 +2,5 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-fourlifedev - team lead
-
+fourlifedev - team lead(backend)
+PinePipe - frontend dev
